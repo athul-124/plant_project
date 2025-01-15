@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background: url('https://static.vecteezy.com/system/resources/thumbnails/041/877/967/small_2x/ai-generated-green-leaves-background-with-copy-space-for-text-nature-background-concept-photo.jpeg') ;
+        }
+        
+        .login-container {
+            color:white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            margin: 100px auto;
+            width: 300px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        a {
+            color:E3F0AF; /* Change this to your desired color */
+            text-decoration: none; /* Optional: remove underline */
+        }
+
+        /* Hover state */
+        a:hover {
+            color: red; /* Change this to your desired hover color */
+        }
+
+        /* Visited state */
+        a:visited {
+            color: yellow; /* Change this for visited links */
+        }
+
+        /* Active state */
+        a:active {
+            color: orange; /* Change this when the link is clicked */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        
+        <p>Don't have an account? <a href='{% url "register" %}'
+            >Register</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+Name,Light Level,Humidity,Plant Type,Watering Frequency,Soil Type
+Ivy,low,medium,succulent,weekly,loamy
+Peace Lily,low,high,flowering,weekly,clay
+Dumb Cane,medium,high,flowering,bi-weekly,clay
+Eucalyptus,medium,low,flowering,bi-weekly,sandy
+Daffodil,medium,medium,succulent,daily,clay
+Lavender,high,medium,indoor,weekly,clay
+Elephant Ear,low,high,succulent,daily,loamy
+Monstera,high,high,herb,weekly,sandy
+Orchid,medium,high,indoor,daily,loamy
+Lily,low,low,outdoor,daily,loamy
+Eucalyptus,medium,low,herb,daily,sandy
+Snake Plant,low,medium,outdoor,weekly,loamy
+Elephant Ear,low,medium,flowering,weekly,clay
+Fern,high,low,indoor,bi-weekly,sandy
+Jade Plant,high,high,outdoor,bi-weekly,sandy
+Bromeliad,medium,medium,flowering,daily,clay
+Oleander,low,low,herb,daily,clay
+Rubber Plant,high,low,indoor,weekly,clay
+Geranium,medium,high,outdoor,weekly,loamy
+Yarrow,high,low,outdoor,weekly,clay
+Lettuce,medium,low,succulent,weekly,sandy
+Succulent,low,medium,flowering,weekly,clay
+Basil,low,low,outdoor,bi-weekly,loamy
+Chrysanthemum,high,low,shrub,weekly,clay
+Aloe Vera,medium,medium,indoor,weekly,clay
+Sedge,medium,low,shrub,bi-weekly,sandy
+Orchid,low,low,shrub,bi-weekly,sandy
+Parlor Palm,high,medium,shrub,bi-weekly,loamy
+ZZ Plant,low,low,herb,weekly,loamy
+Anthurium,low,medium,shrub,weekly,clay
+Kalanchoe,low,high,flowering,daily,clay
+Yarrow,low,high,flowering,daily,clay
+Yarrow,high,high,succulent,weekly,sandy
+Lily,medium,low,outdoor,weekly,loamy
+Dumb Cane,medium,medium,herb,weekly,loamy
+Bamboo Palm,medium,medium,flowering,bi-weekly,loamy
+ZZ Plant,medium,high,shrub,weekly,loamy
+Marigold,medium,high,indoor,bi-weekly,sandy
+Chrysanthemum,high,high,flowering,daily,sandy
+Bamboo Palm,low,medium,indoor,bi-weekly,sandy
+Sunflower,low,low,indoor,daily,loamy
+Elephant Ear,medium,high,succulent,weekly,loamy
+Syngonium,low,low,flowering,bi-weekly,sandy
+African Violet,high,high,shrub,weekly,loamy
+Flamingo Flower,low,medium,shrub,bi-weekly,sandy
+Lucky Bamboo,high,low,outdoor,bi-weekly,clay
+Sedge,high,low,shrub,daily,clay
+Syngonium,medium,medium,shrub,daily,sandy
+Ficus,low,high,succulent,weekly,clay
+African Violet,high,high,indoor,daily,clay
+Philodendron,high,low,shrub,weekly,loamy
+Aloe Vera,low,medium,herb,bi-weekly,loamy
+Moth Orchid,low,medium,shrub,daily,sandy
+Bromeliad,low,low,outdoor,bi-weekly,loamy
+Philodendron,medium,high,shrub,bi-weekly,clay
+Snapdragon,low,high,shrub,daily,loamy
+Bird of Paradise,high,high,herb,daily,sandy
+ZZ Plant,low,low,herb,bi-weekly,loamy
+Pansy,low,high,herb,daily,loamy
+Daffodil,low,medium,succulent,bi-weekly,loamy
+Peace Lily,high,medium,flowering,bi-weekly,sandy
+Kalanchoe,medium,high,flowering,daily,sandy
+Basil,high,medium,shrub,daily,sandy
+Cactus,low,medium,flowering,bi-weekly,loamy
+Ficus,high,high,outdoor,weekly,sandy
+Golden Pothos,medium,medium,shrub,weekly,loamy
+Succulent,low,high,shrub,daily,sandy
+Yarrow,low,low,succulent,weekly,clay
+Weeping Fig,low,medium,flowering,weekly,clay
+Money Tree,high,high,succulent,weekly,sandy
+Lettuce,high,low,indoor,bi-weekly,loamy
+Impatiens,low,high,succulent,weekly,loamy
+Snapdragon,low,low,outdoor,daily,sandy
+Golden Pothos,medium,medium,succulent,bi-weekly,loamy
+Petunia,medium,low,indoor,weekly,clay
+Rubber Plant,low,medium,outdoor,bi-weekly,sandy
+Bamboo Palm,high,high,herb,bi-weekly,loamy
+Peace Lily,medium,high,flowering,daily,loamy
+Lavender,medium,high,shrub,daily,clay
+Wax Begonia,low,medium,flowering,bi-weekly,sandy
+Lucky Bamboo,high,low,shrub,daily,loamy
+Marigold,high,low,shrub,weekly,sandy
+Yucca,high,high,outdoor,bi-weekly,sandy
+Areca Palm,medium,medium,succulent,daily,loamy
+Venus Flytrap,medium,low,outdoor,bi-weekly,loamy
+African Violet,high,medium,shrub,weekly,clay
+ZZ Plant,medium,high,herb,bi-weekly,sandy
+Weeping Fig,low,medium,herb,weekly,loamy
+Yarrow,high,medium,shrub,daily,clay
+Thyme,low,medium,flowering,weekly,clay
+Lettuce,low,medium,shrub,bi-weekly,loamy
+Spider Plant,high,low,flowering,weekly,sandy
+Pothos,medium,high,outdoor,daily,loamy
+African Violet,high,low,succulent,daily,clay
+Pothos,low,low,indoor,daily,clay
+Lettuce,medium,low,indoor,bi-weekly,sandy
+Aloe Vera,low,low,outdoor,daily,sandy
+Dracaena,medium,medium,herb,weekly,loamy
+Jade Plant,medium,low,flowering,bi-weekly,loamy
+Bird of Paradise,low,high,herb,bi-weekly,sandy

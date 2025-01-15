@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Advisor Results</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Centered container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header styles */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Plant list styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul li:hover {
+            background: #eaeaea;
+        }
+
+        ul li strong {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* No plants message */
+        .no-plants {
+            text-align: center;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Back link styles */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer link styling */
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Suggested Plants</h1>
+        {% if plants %}
+            <ul>
+                {% for plant in plants %}
+                    <li>
+                        <strong>{{ plant.name }}</strong><br>
+                        Type: {{ plant.plant_type }}<br>
+                        Light: {{ plant.light_level }}<br>
+                        Humidity: {{ plant.humidity }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-plants">No plants found matching your criteria.</p>
+        {% endif %}
+        <div class="back-link">
+            <a href="{% url 'plant_advisor' %}">Back to Plant Advisor</a>
+        </div>
+    </div>
+</body>
+</html>

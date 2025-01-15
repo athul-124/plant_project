@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant ChatBot</title>
+    <style>
+        /* Simple styles for the chatbot */
+        #chatbox {
+            width: 100%;
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #userInput {
+            width: 80%;
+        }
+
+        #sendButton {
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Plant ChatBot</h1>
+
+    <div id="chatbox"></div>
+
+    <input type="text" id="userInput" placeholder="Ask about a plant..." />
+    <button id="sendButton">Send</button>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', function() {
+            const userMessage = document.getElementById('userInput').value;
+            if (userMessage.trim() === "") {
+                return;
+            }
+
+            // Display user message in the chatbox
+            document.getElementById('chatbox').innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+
+            // Send the message to the backend via AJAX
+            fetch('/chatbot/chatbot/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'  // Include CSRF token for security
+                },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display bot's response in the chatbox
+                if (data.message) {
+                    document.getElementById('chatbox').innerHTML += `<p><strong>Bot:</strong> ${data.message}</p>`;
+                } else {
+                    // Show plant details
+                    document.getElementById('chatbox').innerHTML += `
+                        <p><strong>Bot:</strong> Here is the information about ${data.common_name}:</p>
+                        <ul>
+                            <li><strong>Family:</strong> ${data.family}</li>
+                            <li><strong>Categories:</strong> ${data.categories}</li>
+                            <li><strong>Origin:</strong> ${data.origin}</li>
+                            <li><strong>Climate:</strong> ${data.climate}</li>
+                            <li><img src="${data.img_url}" alt="${data.common_name}" width="200" /></li>
+                        </ul>
+                    `;
+                }
+
+                // Scroll to the bottom
+                document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+
+                // Clear the input
+                document.getElementById('userInput').value = '';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>

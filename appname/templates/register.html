@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background: url('https://static.vecteezy.com/system/resources/previews/038/830/225/non_2x/ai-generated-leaves-green-background-abstract-spring-background-natural-green-leaf-in-the-forest-top-view-of-green-leaf-in-the-garden-flat-lay-photo.jpg') no-repeat center center fixed;
+        }
+        
+        .register-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            margin: 100px auto;
+            width: 400px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Plant Advisor Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+            <input type="text" name="phone" placeholder="Phone" required>
+            <textarea name="address" placeholder="Address" required></textarea>
+            
+            <button type="submit">Register</button>
+        </form>
+        
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+</body>
+</html>

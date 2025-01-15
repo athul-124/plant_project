@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Library</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plant-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            background: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .plant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .plant-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .plant-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #28a745;
+        }
+
+        .plant-card p {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .plant-card p strong {
+            color: #555;
+        }
+
+        .pagination {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .pagination a {
+            margin: 0 5px;
+            padding: 0.7rem 1.2rem;
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background-color: #218838;
+        }
+
+        .pagination .current {
+            margin: 0 5px;
+            padding: 0.7rem 1.2rem;
+            background-color: #ddd;
+            color: #555;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plant Library</h1>
+        
+    </header>
+    <main>
+        {% block content %}
+        <div class="plant-grid">
+            {% for plant in page_obj %}
+            <div class="plant-card">
+                <img src="{{ plant.img_url|default:'placeholder.jpg' }}" alt="{{ plant.common_name }}">
+                <h2>{{ plant.common_name }}</h2>
+                <p><strong>Family:</strong> {{ plant.family }}</p>
+                <p><strong>Categories:</strong> {{ plant.categories }}</p>
+                <p><strong>Origin:</strong> {{ plant.origin }}</p>
+                <p><strong>Climate:</strong> {{ plant.climate }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endblock %}
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </main>
+</body>
+</html>

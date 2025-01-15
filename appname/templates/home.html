@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* style.css */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://static.vecteezy.com/system/resources/previews/014/979/476/large_2x/home-plants-in-pots-on-beige-background-with-copy-space-for-your-advertisement-text-or-logo-plants-store-green-interior-details-potted-plants-sale-3d-rendering-photo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #111;
+        }
+
+        header {
+            background-color: rgba(177, 182, 179, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .hero {
+            {% comment %} background: url('https://yourimageurl.com/bg-image.jpg') no-repeat center center/cover; {% endcomment %}
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            background-size: cover;
+            background-position: center;
+        }
+    
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        .hero .btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .hero .btn:hover {
+            background-color: #218838;
+        }
+
+        .login-button {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            background-color:rgba(246, 246, 246, 0.59); 
+            color: black; 
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .login-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .login-button:hover {
+            background-color:rgb(28, 221, 38);
+            transform: scale(1.05);
+        }
+
+        nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:rgba(255, 255, 255, 0.14); /* Added background color for visual separation */
+          }
+          
+          nav li {
+            display: inline-block;
+            margin: 0 15px; /* Simplified margin */
+          }
+          
+          nav a {
+            color:rgb(3, 9, 0);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px; /* Increased padding for better visual separation */
+            border-radius: 5px; /* Added border-radius for a smoother look */
+            transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform transition for hover effect */
+          }
+          
+          nav a:hover {
+            background-color: rgba(3, 246, 11, 0.41);
+            color: white;
+            transform: scale(1.05); /* Added slight scale-up on hover for emphasis */
+          }
+          nav a {
+            position: relative;
+            display: inline-block;
+        }
+          nav a .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color:rgba(255, 255, 255, 0.14);
+            color: #009900;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the text */
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        nav a:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.27);
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .hero-section {
+            {% comment %} background: url('https://images.unsplash.com/photo-1525279844598-52fd0d3fecc2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBsYW50fGVufDB8fDB8fHww') no-repeat center center fixed; {% endcomment %}
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: #FFFAFA;
+            text-align: center;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            {% comment %} background: rgba(0, 0, 0, 0.5); /* To darken the background image */ {% endcomment %}
+            z-index: 1;
+        }
+        .hero-section h2 {
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section p {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            color:#FFFFFF;
+            text-align: justify;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        
+        .hero-content p {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-evenly; /* Evenly space the feature cards */
+            padding: 40px 20px; /* Increased padding for more breathing room */
+            flex-wrap: wrap;
+            background-color: rgba(0, 0, 0, 0.05); /* Light background to differentiate section */
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners for the feature boxes */
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+            margin: 15px;
+            flex: 1;
+            max-width: 280px; /* Increase max-width for better card sizing */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+            background-image: url('https://plus.unsplash.com/premium_photo-1663962158789-0ab624c4f17d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBsYW50fGVufDB8fDB8fHww'); /* Add your background image URL */
+            background-size: cover; /* Ensure background image covers the entire card */
+            background-position: center; /* Center the background image */
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px); /* Slight lift effect on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+        
+        .feature h3 {
+            font-size: 1.4rem; /* Larger font for feature titles */
+            font-weight: bold;
+            margin-bottom: 15px;
+            color:hsla(0, 25.00%, 95.30%, 0.98); /* Darker color for better contrast */
+        }
+        
+        .feature p {
+            font-size: 1rem;
+            color:hsla(0, 25.00%, 95.30%, 0.98); /* Slightly lighter color for description text */
+            line-height: 1.6;
+        }
+
+        .plant-library-feature {
+            position: absolute;
+            top: 55px; /* Adjust as needed */
+            left: 50px; /* Adjust as needed */
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        
+        .plant-library-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            background-color:rgba(246, 246, 246, 0.59);
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .highlight-box {
+            font-size: 1.1rem;
+            color: black;
+            font-weight:beauty.;
+        }
+        
+
+        .about-us {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.27);
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.6);
+        }
+        
+        .about-us h2 {
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: #33CC00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .about-us p {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            color:rgb(255, 251, 251);
+            text-align: justify;
+        }
+        
+        .about-us .about-us-section {
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color:rgb(15, 219, 35);
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .about-us .about-us-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.27); /* Darken the background */
+            z-index: 1;
+        }
+        
+        .about-us .about-us-section h2 {
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: #33CC00;
+            text-align: center;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+        
+        .about-us .about-us-section p {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            color:rgb(255, 255, 255);
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .about-us .about-us-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+.green-text {
+    color:rgb(46, 152, 46); /* Use the desired shade of green */
+}
+
+
+.mission-vision-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    background-color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card h2 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.card strong {
+    color: #4CAF50;
+}
+
+
+
+
+footer {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf & Learn</title>
+</head>
+<body>
+    <header>
+        <img src="https://files.oaiusercontent.com/file-5kZQdADnGy6NcvhsHi7gN3?se=2025-01-11T11%3A02%3A45Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Db4096986-9129-4047-ac7f-74fb169b35f0.webp&sig=t9DdI1zF%2Bdh//RQIXUQG12yZd9sVMrJLk733UlFkgVc%3D" alt="Leaf & Learn Logo" style="width:150px;">
+        <a href="{% url 'login' %}" class="login-button">
+            <img src="https://cdn-icons-png.flaticon.com/128/3278/3278613.png" alt="Login Icon">
+            Login
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'plant_advisor' %}" class="tooltip">Plant Advisor
+                    <span class="tooltip-text">Get personalized advice for your plants based on their type and environment.</span>
+                </a></li>
+                <li><a href="{% url 'expert_advice' %}">Expert Advice</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'upload_image' %}">AI-Powered Diagnostics</a></li>
+                <li><a href="{% url 'care' %}">Care</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Your <span class="green-text">GREEN</span> Thumb Starts Here..</h2>
+            <p>Step into the world of plant care like never before. Whether you're nurturing your first houseplant or you're a seasoned gardener, we provide personalized, AI-driven advice to help you grow a flourishing green space. Let us guide you on a journey to thriving plants and endless botanical beauty.</p>
+            <a href="{% url 'register' %}" class="btn">Start Your Journey</a>
+        </section>
+        
+        <div class="plant-library-feature">
+            <a href="{% url 'plant_library' %}" class="plant-library-link">
+                <img src="https://cdn-icons-png.flaticon.com/128/5172/5172436.png" alt="Plant Library Icon" class="icon">
+                <span class="highlight-box">Plant Library</span>
+            </a>
+        </div>
+        
+        <div class="about-us">
+            <div class="about-us-section">
+                <div class="about-us-content">
+                    <h2>About Leaf & Learn</h2>
+                    <p>Welcome to Leaf & Learn – your trusted partner for all things green! Whether you are a seasoned plant enthusiast or a budding gardener, we are here to guide you in creating the perfect green oasis. With a diverse library of over 350 plant varieties and AI-powered tools, we ensure you have access to expert advice, personalized care plans, and diagnostic tools to keep your plants thriving.</p>
+            <p>Our platform connects you with a wealth of knowledge, including curated tips, plant care routines, and expert consultations. We believe in empowering you with the confidence to nurture your plants while enhancing your gardening experience.</p>
+            <p>At Leaf & Learn, our mission is to make gardening enjoyable, accessible, and sustainable for everyone. Explore, learn, and grow with us today!</p>
+                </div>
+            </div>
+            <h2>Our Story</h2>
+            <p>Founded in 2025, Leaf & Learn was born from the passion for nature and the environment. We believe in the power of plants to transform spaces, improve well-being, and make a positive impact on the planet.</p>
+        </div>
+        
+
+        
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Don't forget to water your plant</h1>
+                <p>Water is the driving force of all nature</p>
+            </div>
+        </div>
+
+        <div class="mission-vision-container">
+            <div class="card">
+                <h2>Our Mission</h2>
+                <p>Our mission at <strong>Leaf & Learn</strong> is to provide plant education and guidance to gardening enthusiasts. We aim to offer knowledge and resources to promote sustainable and environmentally-friendly plant care practices for all.</p>
+            </div>
+            <div class="card">
+                <h2>Our Vision</h2>
+                <p>Our vision is to empower individuals with the skills and knowledge to cultivate healthy plants and maintain vibrant green spaces, fostering a greater appreciation for nature and the environment.</p>
+            </div>
+        </div>
+        
+        
+        <section class="features">
+            <div class="feature">
+                <h3>Personalized Care</h3>
+                <p>Tailored care plans for your specific plants.</p>
+            </div>
+            <div class="feature">
+                <h3>AI-Powered Diagnostics</h3>
+                <p>Identify plant problems with ease.</p>
+            </div>
+            <div class="feature">
+                <h3>Expert Advice</h3>
+                <p>Connect with plant experts for personalized guidance.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Leaf & Learn. All rights reserved.</p>
+    </footer>
+</body>
+</html>

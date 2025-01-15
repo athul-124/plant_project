@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care Tips</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% endcomment %}
+</head>
+<body>
+    <header>
+        <style>
+            body {
+                background: url('https://files.oaiusercontent.com/file-JiraTuEQBgnGuxFqi69yKW?se=2025-01-12T06%3A37%3A40Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Deea31378-5d80-431b-a3e6-b851b70137c5.webp&sig=BORv1yvGEeYlSF6gB0V8rtMw4EJf4ZW0a8IwDKVcO6A%3D');
+                font-family: 'Georgia', serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            
+            nav {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: right;
+                align-items: right;
+                background-color:rgba(255, 255, 255, 0); /* Added background color for visual separation */
+              }
+              
+              nav li {
+                display: inline-block;
+                margin: 0 15px; /* Simplified margin */
+              }
+              
+              nav a {
+                color:rgb(216, 216, 216);
+                text-decoration: none;
+                font-weight: bold;
+                padding: 10px 20px; /* Increased padding for better visual separation */
+                border-radius: 5px; /* Added border-radius for a smoother look */
+                transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform transition for hover effect */
+              }
+              
+              nav a:hover {
+                background-color: rgba(3, 246, 11, 0.41);
+                color: white;
+                transform: scale(1.05); /* Added slight scale-up on hover for emphasis */
+              }
+            
+            .hero {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 50px 20px;
+                background-color: rgba(215, 247, 215, 0.8); 
+                border-radius: 10px;
+                max-width: 1200px;
+                margin: 50px auto; /* Center the section */
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+                backdrop-filter: blur(10px); /* Add a glass-like blur effect */
+            }
+            
+            .hero h1 {
+                font-family: 'Georgia', serif; /* Elegant font */
+                font-size: 2.5em;
+                color:rgb(0, 0, 0); /* Deep green color for plant care theme */
+                margin-bottom: 15px;
+                text-transform: capitalize; /* Makes the text look neater */
+            }
+            
+            .hero p {
+                font-family: 'Arial', sans-serif;
+                font-size: 1.2em;
+                color: #555;
+                line-height: 1.8;
+                max-width: 800px;
+                margin: 0 auto 20px;
+            }
+            
+            .hero a {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 1em;
+                color: #fff;
+                background: #43a047; /* A vibrant green button */
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-family: 'Arial', sans-serif;
+                font-weight: bold;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                transition: background 0.3s ease, transform 0.2s ease;
+            }
+            
+            .hero a:hover {
+                background: #388e3c; /* Darker green for hover state */
+                transform: translateY(-3px); /* Slight lift effect */
+            }
+            
+            
+            .content {
+                padding: 20px;
+                margin: 0 auto;
+                max-width: 800px;
+                background: rgba(237, 237, 237, 0.51); /* Light green with 80% transparency */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px; /* Optional: to give the section a rounded edge */
+            }
+            
+            .content img {
+                max-width: 100%;
+                height: auto;
+                margin: 15px 0;
+            }
+            
+            .faq ul {
+                padding: 0;
+                list-style-type: none;
+            }
+            
+            .faq ul li {
+                margin-bottom: 15px;
+                background: rgba(237, 237, 237, 0.51); /* Light green with 80% transparency */
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: slight shadow for better visibility */
+            }
+            
+            
+            footer {
+                text-align: center;
+                padding: 10px;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+    }
+            
+        </style>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                
+                <li><a href="{% url 'plant_library' %}">Plant Library</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>How to Choose the Best Plants for Your Space?</h1>
+            
+        </section>
+
+        <section class="content">
+            <h2>Introduction</h2>
+            <p>Whether you’re an experienced gardener or a first-time plant buyer, selecting the right plants for your space can be a challenging task...</p>
+            {% comment %} <img src="{% static 'images/plant_tips_intro.jpg' %}" alt="Introduction to Plant Care"> {% endcomment %}
+
+            <h2>1. Assess Your Space and Environment</h2>
+            <p>The first step in choosing the best plants for your space is understanding the conditions your plants will face...</p>
+            {% comment %} <img src="{% static 'images/assess_space.jpg' %}" alt="Assess Your Space"> {% endcomment %}
+
+            <h2>2. Consider the Climate</h2>
+            <p>Plants thrive in specific climates. Understanding your region’s climate—whether it’s tropical, temperate, or arid...</p>
+            {% comment %} <img src="{% static 'images/climate_tips.jpg' %}" alt="Climate Considerations"> {% endcomment %}
+
+            <h2>3. Choose Plants Based on Your Skill Level</h2>
+            <p>Selecting plants that match your gardening experience can make the difference between success and frustration...</p>
+            {% comment %} <img src="{% static 'images/skill_level.jpg' %}" alt="Skill Level Plant Selection"> {% endcomment %}
+
+            <h2>4. Focus on Function: What Do You Want from Your Plants?</h2>
+            <p>Plants can serve a variety of functions in your home or garden, from enhancing aesthetic appeal to improving air quality...</p>
+            {% comment %} <img src="{% static 'images/function_plants.jpg' %}" alt="Functional Plants"> {% endcomment %}
+
+            <h2>5. Opt for Low-Maintenance Plants</h2>
+            <p>Not everyone has the time to devote hours to plant care, so low-maintenance plants are a great solution...</p>
+            {% comment %} <img src="{% static 'images/low_maintenance.jpg' %}" alt="Low Maintenance Plants"> {% endcomment %}
+        </section>
+
+        <section class="faq">
+            <h2>FAQs</h2>
+            <ul>
+                <li><strong>Q: How do I know what plants will grow best in my space?</strong>
+                    <p>A: Start by assessing your space’s light, climate, and available room for growth...</p>
+                </li>
+                <li><strong>Q: What are the easiest plants to care for indoors?</strong>
+                    <p>A: Low-maintenance indoor plants like snake plants, pothos, and ZZ plants are great options...</p>
+                </li>
+                <li><strong>Q: Can I grow outdoor plants indoors?</strong>
+                    <p>A: Some outdoor plants, like herbs, can adapt to indoor environments if given the right light and care...</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Leaf & Learn</p>
+    </footer>
+</body>
+</html>
